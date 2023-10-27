@@ -8,6 +8,8 @@
     rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
     crossorigin="anonymous"/>
+
+    <script src="scripts\overnight.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
@@ -51,14 +53,18 @@
         </div>
       </nav>
 
-      <form class="mx-5">
+      <form class="mx-5" id="form">
         <fieldset>
           <legend class="mt-5 mb-5">Overnight Stay</legend>
-          <div class="w-50 row">
+          <div class="">
             <label class="col-form-label mt-4" for="inputDefault">Full Name</label>
-            <input type="text" class="form-control col-4" placeholder="First Name" id="inputDefault"/>
-            <label class="col-form-label mt-4" for="inputDefault"></label>
-            <input type="text" class="form-control col-4" placeholder="Last Name" id="inputDefault"/>
+            <div class="col-12 row">
+                <div class="col-5 mr-1"><input type="text" class="form-control col-5" placeholder="First Name" id="firstName"/></div>
+                
+                <div class="col-5 ml-1"><input type="text" class="form-control col-5" placeholder="Last Name" id="lastName"/></div>
+                                
+            </div>
+            
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
@@ -67,12 +73,12 @@
           </div>
           <div class="form-group mt-5 w-25">
             <label for="orderDateInput" class="form-label">Check in Date:</label>
-            <input type="date" class="form-control" id="orderDateInput" />
+            <input type="date" class="form-control" id="checkInDate" />
           </div>
           <div class="form-group w-25">
             <div class="form-group">
                 <label for="exampleSelect1" class="form-label mt-4">Number of Night</label>
-                <select class="form-select" id="exampleSelect1">
+                <select class="form-select" id="numberOfNights">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -110,7 +116,7 @@
                 class="form-check-input"
                 type="radio"
                 name="optionsRadios"
-                id="optionsRadios1"
+                id="roomQueen"
                 value="option1"
                 checked=""
               />
@@ -121,7 +127,7 @@
                 class="form-check-input"
                 type="radio"
                 name="optionsRadios"
-                id="optionsRadios2"
+                id="roomKing"
                 value="option2"
               />
               <label class="form-check-label" for="optionsRadios2">King</label>
@@ -131,7 +137,7 @@
                   class="form-check-input"
                   type="radio"
                   name="optionsRadios"
-                  id="optionsRadios2"
+                  id="room2Bedroom"
                   value="option2"
                 />
                 <label class="form-check-label" for="optionsRadios2">2-Bedroom</label>
@@ -139,7 +145,7 @@
           </fieldset>
             <div class="form-group">
                 <label for="exampleSelect1" class="form-label mt-4">Number of Adults</label>
-                <select class="form-select" id="exampleSelect1">
+                <select class="form-select" id="numberOfAdults">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -148,7 +154,7 @@
               </div>
                 <div class="form-group">
                     <label for="exampleSelect1" class="form-label mt-4">Number of Children</label>
-                    <select class="form-select" id="exampleSelect1">
+                    <select class="form-select" id="numberOfCildren">
                       <option>0</option>
                       <option>1</option>
                       <option>2</option>
@@ -162,9 +168,9 @@
               <input
                 class="form-check-input"
                 type="radio"
-                name="optionsRadios"
+                name="optionsRadios2"
                 id="optionsRadios1"
-                value="option1"
+                value="noDiscount"
                 checked=""
               />
               <label class="form-check-label" for="optionsRadios1">None</label>
@@ -173,8 +179,8 @@
               <input
                 class="form-check-input"
                 type="radio"
-                name="optionsRadios"
-                id="optionsRadios2"
+                name="optionsRadios2"
+                id="aSDiscount"
                 value="option2"
               />
               <label class="form-check-label" for="optionsRadios2">AAA/Seniors (10%)</label>
@@ -183,22 +189,25 @@
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="optionsRadios"
-                  id="optionsRadios2"
+                  name="optionsRadios2"
+                  id="militaryDiscount"
                   value="option2"
                 />
                 <label class="form-check-label" for="optionsRadios2">Military (20%)</label>
               </div>
           </fieldset>
           <section class="ms-5">
-            <div class="mt-5">Number of Nights: <span id="carDisplay"></span></div>
+            <div class="mt-5">
+              Room Rate: <span id="roomRateDisplay"></span>
+            </div>
+            <div class="mt-2">Discounted Price: <span id="discountedPriceDisplay"></span></div>
             <div class="mt-2">
-              Room Type: <span id="addedOptionsDisplay"></span>
+              Discount: <span id="discountDisplay"></span>
             </div>
             <div class="mt-2">
-              Discount: <span id="ageChargeDisplay"></span>
-            </div>
-            <div class="mt-4">Total: <span id="orderTotalDisplay"></span></div>
+                Taxes: <span id="taxesDisplay"></span>
+              </div>
+            <div class="mt-4">Total: <span id="totalDisplay"></span></div>
           </section>
           <button type="submit" class="btn btn-primary mt-5">
             Estimate Total Cost
