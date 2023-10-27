@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Resort</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"/>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="overnight.html">Overnight Stay
+                    <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Dining</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Rent A Car</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Activities</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-sm-2" type="search" placeholder="Search">
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <form class="mx-5">
+        <fieldset>
+          <legend class="mt-5 mb-5">Overnight Stay</legend>
+          <div class="w-50 row">
+            <label class="col-form-label mt-4" for="inputDefault">Full Name</label>
+            <input type="text" class="form-control col-4" placeholder="First Name" id="inputDefault"/>
+            <label class="col-form-label mt-4" for="inputDefault"></label>
+            <input type="text" class="form-control col-4" placeholder="Last Name" id="inputDefault"/>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
+            <input type="email" class="form-control w-75" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group mt-5 w-25">
+            <label for="orderDateInput" class="form-label">Check in Date:</label>
+            <input type="date" class="form-control" id="orderDateInput" />
+          </div>
+          <div class="form-group w-25">
+            <div class="form-group">
+                <label for="exampleSelect1" class="form-label mt-4">Number of Night</label>
+                <select class="form-select" id="exampleSelect1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                  <option>11</option>
+                  <option>12</option>
+                  <option>13</option>
+                  <option>14</option>
+                  <option>15</option>
+                  <option>16</option>
+                  <option>17</option>
+                  <option>18</option>
+                  <option>19</option>
+                  <option>20</option>
+                  <option>21</option>
+                  <option>22</option>
+                  <option>23</option>
+                  <option>24</option>
+                  <option>25</option>
+                  <option>26</option>
+                  <option>27</option>
+                  <option>28</option>
+                </select>
+              </div>
+          <fieldset class="form-group">
+            <legend class="mt-4">Room Type</legend>
+            <div class="form-check mt-2">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="optionsRadios"
+                id="optionsRadios1"
+                value="option1"
+                checked=""
+              />
+              <label class="form-check-label" for="optionsRadios1">Queen</label>
+            </div>
+            <div class="form-check mt-2">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="optionsRadios"
+                id="optionsRadios2"
+                value="option2"
+              />
+              <label class="form-check-label" for="optionsRadios2">King</label>
+            </div>
+            <div class="form-check mt-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="optionsRadios"
+                  id="optionsRadios2"
+                  value="option2"
+                />
+                <label class="form-check-label" for="optionsRadios2">2-Bedroom</label>
+              </div>
+          </fieldset>
+            <div class="form-group">
+                <label for="exampleSelect1" class="form-label mt-4">Number of Adults</label>
+                <select class="form-select" id="exampleSelect1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+                <div class="form-group">
+                    <label for="exampleSelect1" class="form-label mt-4">Number of Children</label>
+                    <select class="form-select" id="exampleSelect1">
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                  </div>
+          <fieldset class="form-group">
+            <legend class="mt-4">Discounts</legend>
+            <div class="form-check mt-2">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="optionsRadios"
+                id="optionsRadios1"
+                value="option1"
+                checked=""
+              />
+              <label class="form-check-label" for="optionsRadios1">None</label>
+            </div>
+            <div class="form-check mt-2">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="optionsRadios"
+                id="optionsRadios2"
+                value="option2"
+              />
+              <label class="form-check-label" for="optionsRadios2">AAA/Seniors (10%)</label>
+            </div>
+            <div class="form-check mt-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="optionsRadios"
+                  id="optionsRadios2"
+                  value="option2"
+                />
+                <label class="form-check-label" for="optionsRadios2">Military (20%)</label>
+              </div>
+          </fieldset>
+          <section class="ms-5">
+            <div class="mt-5">Number of Nights: <span id="carDisplay"></span></div>
+            <div class="mt-2">
+              Room Type: <span id="addedOptionsDisplay"></span>
+            </div>
+            <div class="mt-2">
+              Discount: <span id="ageChargeDisplay"></span>
+            </div>
+            <div class="mt-4">Total: <span id="orderTotalDisplay"></span></div>
+          </section>
+          <button type="submit" class="btn btn-primary mt-5">
+            Estimate Total Cost
+          </button>
+        </fieldset>
+      </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+    <footer></footer>
+</body>
+</html>
