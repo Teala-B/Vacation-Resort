@@ -52,7 +52,7 @@ else if (bed2Room.checked){
     if (people > 6) document.getElementById("messageAlert").hidden = false
     else document.getElementById("messageAlert").hidden = true
 }
-return document.getElementById("messageAlert")
+return document.getElementById("messageAlert").hidden
 }
 
 function createReservation(event) {
@@ -76,15 +76,15 @@ function createReservation(event) {
 }
 
 function display(roomRate, discountedPrice, discount, taxes, total) {
-    document.getElementById("roomRateDisplay").innerText = `$ ${roomRate.toFixed(2)}`
-    document.getElementById("discountedPriceDisplay").innerText = `$ ${discountedPrice.toFixed(2)}`
-    document.getElementById("discountDisplay").innerText = `$ ${discount.toFixed(2)}`
-    document.getElementById("taxesDisplay").innerText = `$ ${taxes.toFixed(2)}`
-    document.getElementById("totalDisplay").innerText = `$ ${total.toFixed(2)}`
+    document.getElementById("roomRateDisplay").innerText = `$${roomRate.toFixed(2)}`
+    document.getElementById("discountedPriceDisplay").innerText = `$${discountedPrice.toFixed(2)}`
+    document.getElementById("discountDisplay").innerText = `$${discount.toFixed(2)}`
+    document.getElementById("taxesDisplay").innerText = `$${taxes.toFixed(2)}`
+    document.getElementById("totalDisplay").innerText = `$${total.toFixed(2)}`
 
-    if (document.getElementById("messageAlert") == true) {
+    if (document.getElementById("messageAlert").hidden == true) {
 
-        document.getElementById("totalDisplay").hidden = false
+        document.getElementById("displayAll").hidden = false
     }
-    else document.getElementById("totalDisplay").hidden = true
+    else document.getElementById("totalDisplay").hidden = false
 }
