@@ -8,14 +8,24 @@ function init() {
 
 
 function getRoomRate() {
-
+ 
+    let date = document.getElementById("checkInDate").value
     let queenRoom = document.getElementById("roomQueen")
     let kingRoom = document.getElementById("roomKing")
     let bed2Room = document.getElementById("room2Bedroom")
-
-    if(queenRoom.checked) return 150
-    else if(kingRoom.checked) return 150    
-    else return 210
+    
+    date = new Date(date)
+    
+    if(date.getUTCMonth() >= 5 && date.getUTCMonth() <= 7){
+        if(queenRoom.checked) return 250
+        else if(kingRoom.checked) return 250    
+        else return 350
+    }
+    else{
+        if(queenRoom.checked) return 150
+        else if(kingRoom.checked) return 150    
+        else return 210
+    }
 }
 
 
@@ -68,7 +78,6 @@ function createReservation(event) {
     //let discount = document.getElementById("").value
 
     let subtotal = roomRate * numberOfNights - discount
-
     let taxes = subtotal * .12
     let total = subtotal + taxes
 

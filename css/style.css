@@ -1,3 +1,7 @@
 .images{
     width: 50px;
 }
+.nav{
+    display: flexbox;
+    justify-content: end;
+}
