@@ -16,9 +16,8 @@ function getRoomRate() {
     if(queenRoom.checked) return 150
     else if(kingRoom.checked) return 150    
     else return 210
-
-
 }
+
 
 function getDiscount() {
 
@@ -30,26 +29,38 @@ function getDiscount() {
     else return 0
 }
 
+
 function capacity(){
-    let adults = document.getElementById("numberOfAdults").value
-    let children = document.getElementById("numberOfChildren").value
+    let adults = +document.getElementById("numberOfAdults").value
+    let children = +document.getElementById("numberOfChildren").value
     let people = adults + children 
+    let messageAlert = document.getElementById("messageAlert")
+    let queenRoom = document.getElementById("roomQueen")
+    let kingRoom = document.getElementById("roomKing")
+    let bed2Room = document.getElementById("room2Bedroom")
+
     
-if
-
-
-    //let queenCapacity = 5
-    //let kingCapacity = 2
-    //let bed2Capacity = 6
+if (queenRoom.checked){
+    if (people > 5) document.getElementById("messageAlert").hidden = false
+    else document.getElementById("messageAlert").hidden = true
+}
+else if (kingRoom.checked){
+    if (people > 2) document.getElementById("messageAlert").hidden = false
+    else document.getElementById("messageAlert").hidden = true
+}
+else if (bed2Room.checked){
+    if (people > 6) document.getElementById("messageAlert").hidden = false
+    else document.getElementById("messageAlert").hidden = true
+}
+return document.getElementById("messageAlert")
 }
 
 function createReservation(event) {
     event.preventDefault()
 
-    
-
     let roomRate = getRoomRate()
     let numberOfNights = document.getElementById("numberOfNights").value
+    let messageAlert = capacity()
     let discount = getDiscount() * numberOfNights
     let discountedPrice = roomRate - discount
 
@@ -70,4 +81,10 @@ function display(roomRate, discountedPrice, discount, taxes, total) {
     document.getElementById("discountDisplay").innerText = `$ ${discount.toFixed(2)}`
     document.getElementById("taxesDisplay").innerText = `$ ${taxes.toFixed(2)}`
     document.getElementById("totalDisplay").innerText = `$ ${total.toFixed(2)}`
+
+    if (document.getElementById("messageAlert") == true) {
+
+        document.getElementById("totalDisplay").hidden = false
+    }
+    else document.getElementById("totalDisplay").hidden = true
 }
